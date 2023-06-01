@@ -49,7 +49,7 @@ class ProcessCsvBulkUpload implements ShouldQueue
         $id = $this->data['id'];
         $userId = $this->data['user_id'];
 
-        Auth::loginUsingId($userId);
+        Auth::guard('web')->loginUsingId($userId);
 
         $keywordBulkUpload = KeywordBulkUpload::find($id);
 
