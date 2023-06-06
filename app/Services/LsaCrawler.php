@@ -25,6 +25,7 @@ use Carbon\Carbon;
 use App\Models\DailyAvgRank;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use App\Traits\ProxyRotation;
+use Symfony\Component\Yaml\Parser;
 
 class LsaCrawler
 {
@@ -110,10 +111,11 @@ class LsaCrawler
     public function crawlLsaAds(string $originalKeyword, string $location)
     {
         $keyword = $this->checkKeyword($originalKeyword, $location);
-
+        
         $lsaListUrl = $this->lsaBaseUrl.$keyword;
-
+        // dump($lsaListUrl);
         $result = $this->startInitialScraping($lsaListUrl);
+            print("hello");
 
         if (!$result) {
             Log::channel('not_lsa')->info($this->failedContentLogging);
@@ -129,6 +131,7 @@ class LsaCrawler
             $businessEntitiesCollection = $this->getBusinessEntities($this->content);
 
             $this->storeBusinessEntitiesCollection($keywordModel, $businessEntitiesCollection);
+            print("hello");
         } catch (\Exception $exception) {
             DB::rollBack();
             activity()->event('STORING_DATA_ERROR_INITIAL')->log($exception->getMessage());
@@ -139,6 +142,7 @@ class LsaCrawler
         DB::commit();
 
         return $keywordModel;
+        // return;
     }
 
     /**
@@ -197,10 +201,14 @@ class LsaCrawler
         for ($crashes = 0; $crashes < 3; $crashes++) {
             try {
                 $proxyData = $this->getRandomProxy();
-
+                // printf($crashes);
+                // asdfsdf;
+                
                 $html = $this->scrapeUrl($lsaListUrl, $proxyData);
+                dd($proxyData);
                 break;
             } catch (\Exception $exception) {
+                dump("asdfasdf");
                 if ($crashes < 2) {
                     sleep(2);
                 } else {
@@ -228,6 +236,7 @@ class LsaCrawler
         activity()->event('MANUAL_INITIAL_SCRAPE_UNKNOWN')->log("$criteria1 + $criteria2 + $criteriaNotLsa1 + $criteriaNotLsa2");
 
         $this->invalidateProxyOnFailure($proxyData);
+        // return;
 
         throw new ProxyFailedException();
     }

@@ -31,17 +31,17 @@ class AxiosCrawler
         $scriptPath = base_path('scripts/axiosCrawler.js');
 
         $command = "/home/andrija/node/bin/node '$scriptPath' '$url' $proxyIp $proxyPort $username $password";
-
+     
         $process = Process::fromShellCommandline($command)->setTimeout(400);
 
         $process->run();
-
+        // dump($process);
+        dump("////////////////////////////");
         if ($process->isSuccessful()) {
             return rtrim($process->getOutput());
         }
 
         $exitCode = $process->getExitCode();
-
         if ($exitCode === 3) {
             throw new UnsuccessfulResponse($process->getErrorOutput());
         }
@@ -56,7 +56,8 @@ class AxiosCrawler
             activity()->event('PROXY')->log("$proxyIp:$proxyPort");
             throw new ProcessFailedConnectionException($errorOutput);
         }
-
-        throw new ProcessFailedException($process);
+        dump($errorOutput);
+        return;
+        // throw new ProcessFailedException($process);
     }
 }

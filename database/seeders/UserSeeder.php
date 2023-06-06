@@ -26,185 +26,185 @@ class UserSeeder extends Seeder
 
         $newUser->assignRole('Customer');
 
-        $newUser = User::create([
-            'name' => Str::random(10),
-            'email' => Str::random(10) . '@mail.com',
-            'google_id'=> '845734589435',
-            'password' => encrypt('123456dummy'),
-            'active' => 1
-        ]);
+        // $newUser = User::create([
+        //     'name' => Str::random(10),
+        //     'email' => Str::random(10) . '@mail.com',
+        //     'google_id'=> '845734589435',
+        //     'password' => encrypt('123456dummy'),
+        //     'active' => 1
+        // ]);
 
-        $newUser->assignRole('Customer');
+        // $newUser->assignRole('Customer');
 
-        $newUser = User::create([
-            'name' => Str::random(10),
-            'email' => Str::random(10) . '@mail.com',
-            'google_id'=> '845734589435',
-            'password' => encrypt('123456dummy'),
-            'active' => 1
-        ]);
+        // $newUser = User::create([
+        //     'name' => Str::random(10),
+        //     'email' => Str::random(10) . '@mail.com',
+        //     'google_id'=> '845734589435',
+        //     'password' => encrypt('123456dummy'),
+        //     'active' => 1
+        // ]);
 
-        $newUser->assignRole('Customer');
+        // $newUser->assignRole('Customer');
 
-        $newUser = User::create([
-            'name' => Str::random(10),
-            'email' => Str::random(10) . '@mail.com',
-            'google_id'=> '845734589435',
-            'password' => encrypt('123456dummy'),
-            'active' => 1
-        ]);
+        // $newUser = User::create([
+        //     'name' => Str::random(10),
+        //     'email' => Str::random(10) . '@mail.com',
+        //     'google_id'=> '845734589435',
+        //     'password' => encrypt('123456dummy'),
+        //     'active' => 1
+        // ]);
 
-        $newUser->assignRole('Customer');
+        // $newUser->assignRole('Customer');
 
-        $newUser = User::create([
-            'name' => Str::random(10),
-            'email' => Str::random(10) . '@mail.com',
-            'google_id'=> '845734589435',
-            'password' => encrypt('123456dummy'),
-            'active' => 1
-        ]);
+        // $newUser = User::create([
+        //     'name' => Str::random(10),
+        //     'email' => Str::random(10) . '@mail.com',
+        //     'google_id'=> '845734589435',
+        //     'password' => encrypt('123456dummy'),
+        //     'active' => 1
+        // ]);
 
-        $newUser->assignRole('Customer');
+        // $newUser->assignRole('Customer');
 
-        $newUser = User::create([
-            'name' => Str::random(10),
-            'email' => Str::random(10) . '@mail.com',
-            'google_id'=> '845734589435',
-            'password' => encrypt('123456dummy'),
-            'active' => 1
-        ]);
+        // $newUser = User::create([
+        //     'name' => Str::random(10),
+        //     'email' => Str::random(10) . '@mail.com',
+        //     'google_id'=> '845734589435',
+        //     'password' => encrypt('123456dummy'),
+        //     'active' => 1
+        // ]);
 
-        $newUser->assignRole('Customer');
+        // $newUser->assignRole('Customer');
 
-        $newUser = User::create([
-            'name' => Str::random(10),
-            'email' => Str::random(10) . '@mail.com',
-            'google_id'=> '845734589435',
-            'password' => encrypt('123456dummy'),
-            'active' => 1
-        ]);
+        // $newUser = User::create([
+        //     'name' => Str::random(10),
+        //     'email' => Str::random(10) . '@mail.com',
+        //     'google_id'=> '845734589435',
+        //     'password' => encrypt('123456dummy'),
+        //     'active' => 1
+        // ]);
 
-        $newUser->assignRole('Customer');
+        // $newUser->assignRole('Customer');
 
-        $newUser = User::create([
-            'name' => Str::random(10),
-            'email' => Str::random(10) . '@mail.com',
-            'google_id'=> '845734589435',
-            'password' => encrypt('123456dummy'),
-            'active' => 1
-        ]);
+        // $newUser = User::create([
+        //     'name' => Str::random(10),
+        //     'email' => Str::random(10) . '@mail.com',
+        //     'google_id'=> '845734589435',
+        //     'password' => encrypt('123456dummy'),
+        //     'active' => 1
+        // ]);
 
-        $newUser->assignRole('Customer');
+        // $newUser->assignRole('Customer');
 
-        $newUser = User::create([
-            'name' => Str::random(10),
-            'email' => Str::random(10) . '@mail.com',
-            'google_id'=> '845734589435',
-            'password' => encrypt('123456dummy'),
-            'active' => 1
-        ]);
+        // $newUser = User::create([
+        //     'name' => Str::random(10),
+        //     'email' => Str::random(10) . '@mail.com',
+        //     'google_id'=> '845734589435',
+        //     'password' => encrypt('123456dummy'),
+        //     'active' => 1
+        // ]);
 
-        $newUser->assignRole('Customer');
+        // $newUser->assignRole('Customer');
 
-        $newUser = User::create([
-            'name' => Str::random(10),
-            'email' => Str::random(10) . '@mail.com',
-            'google_id'=> '845734589435',
-            'password' => encrypt('123456dummy'),
-            'active' => 1
-        ]);
+        // $newUser = User::create([
+        //     'name' => Str::random(10),
+        //     'email' => Str::random(10) . '@mail.com',
+        //     'google_id'=> '845734589435',
+        //     'password' => encrypt('123456dummy'),
+        //     'active' => 1
+        // ]);
 
-        $newUser->assignRole('Customer');
+        // $newUser->assignRole('Customer');
 
-        $newUser = User::create([
-            'name' => Str::random(10),
-            'email' => Str::random(10) . '@mail.com',
-            'google_id'=> '845734589435',
-            'password' => encrypt('123456dummy'),
-            'active' => 1
-        ]);
+        // $newUser = User::create([
+        //     'name' => Str::random(10),
+        //     'email' => Str::random(10) . '@mail.com',
+        //     'google_id'=> '845734589435',
+        //     'password' => encrypt('123456dummy'),
+        //     'active' => 1
+        // ]);
 
-        $newUser->assignRole('Customer');
+        // $newUser->assignRole('Customer');
 
-        $newUser = User::create([
-            'name' => Str::random(10),
-            'email' => Str::random(10) . '@mail.com',
-            'google_id'=> '845734589435',
-            'password' => encrypt('123456dummy'),
-            'active' => 1
-        ]);
+        // $newUser = User::create([
+        //     'name' => Str::random(10),
+        //     'email' => Str::random(10) . '@mail.com',
+        //     'google_id'=> '845734589435',
+        //     'password' => encrypt('123456dummy'),
+        //     'active' => 1
+        // ]);
 
-        $newUser->assignRole('Customer');
+        // $newUser->assignRole('Customer');
 
-        $newUser = User::create([
-            'name' => Str::random(10),
-            'email' => Str::random(10) . '@mail.com',
-            'google_id'=> '845734589435',
-            'password' => encrypt('123456dummy'),
-            'active' => 1
-        ]);
+        // $newUser = User::create([
+        //     'name' => Str::random(10),
+        //     'email' => Str::random(10) . '@mail.com',
+        //     'google_id'=> '845734589435',
+        //     'password' => encrypt('123456dummy'),
+        //     'active' => 1
+        // ]);
 
-        $newUser->assignRole('Customer');
+        // $newUser->assignRole('Customer');
 
-        $newUser = User::create([
-            'name' => Str::random(10),
-            'email' => Str::random(10) . '@mail.com',
-            'google_id'=> '845734589435',
-            'password' => encrypt('123456dummy'),
-            'active' => 1
-        ]);
+        // $newUser = User::create([
+        //     'name' => Str::random(10),
+        //     'email' => Str::random(10) . '@mail.com',
+        //     'google_id'=> '845734589435',
+        //     'password' => encrypt('123456dummy'),
+        //     'active' => 1
+        // ]);
 
-        $newUser->assignRole('Customer');
+        // $newUser->assignRole('Customer');
 
-        $newUser = User::create([
-            'name' => Str::random(10),
-            'email' => Str::random(10) . '@mail.com',
-            'google_id'=> '845734589435',
-            'password' => encrypt('123456dummy'),
-            'active' => 1
-        ]);
+        // $newUser = User::create([
+        //     'name' => Str::random(10),
+        //     'email' => Str::random(10) . '@mail.com',
+        //     'google_id'=> '845734589435',
+        //     'password' => encrypt('123456dummy'),
+        //     'active' => 1
+        // ]);
 
-        $newUser->assignRole('Customer');
+        // $newUser->assignRole('Customer');
 
-        $newUser = User::create([
-            'name' => Str::random(10),
-            'email' => Str::random(10) . '@mail.com',
-            'google_id'=> '845734589435',
-            'password' => encrypt('123456dummy'),
-            'active' => 1
-        ]);
+        // $newUser = User::create([
+        //     'name' => Str::random(10),
+        //     'email' => Str::random(10) . '@mail.com',
+        //     'google_id'=> '845734589435',
+        //     'password' => encrypt('123456dummy'),
+        //     'active' => 1
+        // ]);
 
-        $newUser->assignRole('Customer');
+        // $newUser->assignRole('Customer');
 
-        $newUser = User::create([
-            'name' => Str::random(10),
-            'email' => Str::random(10) . '@mail.com',
-            'google_id'=> '845734589435',
-            'password' => encrypt('123456dummy'),
-            'active' => 1
-        ]);
+        // $newUser = User::create([
+        //     'name' => Str::random(10),
+        //     'email' => Str::random(10) . '@mail.com',
+        //     'google_id'=> '845734589435',
+        //     'password' => encrypt('123456dummy'),
+        //     'active' => 1
+        // ]);
 
-        $newUser->assignRole('Customer');
+        // $newUser->assignRole('Customer');
 
-        $newUser = User::create([
-            'name' => Str::random(10),
-            'email' => Str::random(10) . '@mail.com',
-            'google_id'=> '845734589435',
-            'password' => encrypt('123456dummy'),
-            'active' => 1
-        ]);
+        // $newUser = User::create([
+        //     'name' => Str::random(10),
+        //     'email' => Str::random(10) . '@mail.com',
+        //     'google_id'=> '845734589435',
+        //     'password' => encrypt('123456dummy'),
+        //     'active' => 1
+        // ]);
 
-        $newUser->assignRole('Customer');
+        // $newUser->assignRole('Customer');
 
-        $newUser = User::create([
-            'name' => Str::random(10),
-            'email' => Str::random(10) . '@mail.com',
-            'google_id'=> '845734589435',
-            'password' => encrypt('123456dummy'),
-            'active' => 1
-        ]);
+        // $newUser = User::create([
+        //     'name' => Str::random(10),
+        //     'email' => Str::random(10) . '@mail.com',
+        //     'google_id'=> '845734589435',
+        //     'password' => encrypt('123456dummy'),
+        //     'active' => 1
+        // ]);
 
-        $newUser->assignRole('Customer');
+        // $newUser->assignRole('Customer');
 
 
     }

@@ -26,25 +26,25 @@ class RankingSeeder extends Seeder
             $ranking->save();
         }
 
-        dd('done');
+        // dd('done');
 
-        dd($rankingCollection->first());
+        // dd($rankingCollection->first());
 
-//        $days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
-//
-//        foreach ($days as $day) {
-//            foreach ($rankingCollection as $ranking) {
-//                $data = $ranking->getAttributes();
-//                /** @var Carbon $carbon */
-//                $carbon = $ranking->created_at;
-//                $carbon->addDay();
-//                $data['day'] = $day;
-//                $data['created_at'] = $carbon->format('Y-m-d H:i:s');
-//                $data['updated_at'] = $carbon->format('Y-m-d H:i:s');
-//                unset($data['id']);
-//                DB::table('business_entities_ranking')->insert($data);
-//            }
-//        }
+       $days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+
+       foreach ($days as $day) {
+           foreach ($rankingCollection as $ranking) {
+               $data = $ranking->getAttributes();
+               /** @var Carbon $carbon */
+               $carbon = $ranking->created_at;
+               $carbon->addDay();
+               $data['day'] = $day;
+               $data['created_at'] = $carbon->format('Y-m-d H:i:s');
+               $data['updated_at'] = $carbon->format('Y-m-d H:i:s');
+               unset($data['id']);
+               DB::table('business_entities_ranking')->insert($data);
+           }
+       }
 //
 //        dd('done');
 

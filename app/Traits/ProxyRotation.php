@@ -38,15 +38,15 @@ trait ProxyRotation {
             $subnet = $proxyData->subnet;
         }
 
-        $skipProxyArray = array_unique($skipProxyArray);
+            $skipProxyArray = array_unique($skipProxyArray);
 
-        if (!count($skipProxyArray)) {
-            $proxyCollection = ProxyData::get();
-
-            $proxyData = $proxyCollection->random();
-
-            return $proxyData;
-        }
+            if (!count($skipProxyArray)) {
+                $proxyCollection = ProxyData::get();
+                // dump($proxyCollection);
+                $proxyData = $proxyCollection->random();
+                // dump($proxyData);
+                return $proxyData;
+            }
 
         $proxyDataQuery = ProxyData::query();
 
@@ -69,6 +69,7 @@ trait ProxyRotation {
         $proxyData = $proxyDataCollection->first();
 
         $weight = $proxyData->weight;
+
         $weight++;
 
         $proxyData->weight = $weight;
@@ -79,5 +80,6 @@ trait ProxyRotation {
         ]);
 
         return $proxyData;
+        // return;
     }
 }

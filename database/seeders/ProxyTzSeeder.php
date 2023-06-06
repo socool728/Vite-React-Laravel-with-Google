@@ -18,8 +18,9 @@ class ProxyTzSeeder extends Seeder
         ini_get('allow_url_fopen');
 
         $proxyDataCollection = ProxyData::all();
-
+        $i = 0;
         foreach ($proxyDataCollection as $proxyData) {
+            $i ++;
             $ipInfo = file_get_contents('http://ip-api.com/json/' . $proxyData->ip_address);
             $ipInfo = json_decode($ipInfo);
             $timezone = $ipInfo->timezone;
@@ -27,6 +28,10 @@ class ProxyTzSeeder extends Seeder
             $proxyData->tz = $timezone;
 
             $proxyData->save();
+            var_dump($i);
+            if($i % 20 == 0){
+                sleep(30);
+            }
         }
     }
 }

@@ -18,6 +18,7 @@ use Livewire\Component;
 use Livewire\TemporaryUploadedFile;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Str;
+use SebastianBergmann\Environment\Console;
 use Spatie\SimpleExcel\SimpleExcelReader;
 
 class KeywordSearch extends Component
@@ -125,8 +126,9 @@ class KeywordSearch extends Component
         /** @var LsaCrawler $crawler */
         $crawler = App::make(LsaCrawler::class);
 
-        try {
+        try {           
             $keywordModel = $crawler->crawlLsaAds($this->keyword, $this->location);
+            // dump($this->keyword);
         } catch (InactiveUserException $exception) {
             return redirect()->back()->with('error', 'Keyword tracking disabled. Contact administrator.');
         } catch (KeywordAlreadyTrackedException $exception) {

@@ -14,15 +14,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        //$this->call(RankingSeeder::class);
-        //$this->call(ProxySeeder::class);
+        $this->call(RankingSeeder::class);
+        $this->call(ProxySeeder::class);
         $this->call(ProxyTzSeeder::class);
-//        $this->call(UserSeeder::class);
-        // \App\Models\User::factory(10)->create();
+        $this->call(RoleSeeder::class);
+        $this->call(UserSeeder::class);
+        \App\Models\User::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        \App\Models\User::factory()->create([
+            'name' => 'Test User',
+            'email' => 'test@example.com',
+        ]);
     }
 }

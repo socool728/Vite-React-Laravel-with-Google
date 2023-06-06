@@ -15,7 +15,7 @@ class ProxySeeder extends Seeder
      */
     public function run()
     {
-        $file = fopen(storage_path("app/Webshare 100 proxies.txt"), "r");
+        $file = fopen(storage_path("app\Webshare 100 proxies.txt"), "r");
 
         while(!feof($file)) {
             $line = fgets($file);
