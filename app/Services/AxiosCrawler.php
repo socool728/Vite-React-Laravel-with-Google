@@ -28,15 +28,20 @@ class AxiosCrawler
     {
         $url = $url . "&hl=en&gl=us";
 
-        $scriptPath = base_path('scripts/axiosCrawler.js');
+        // $scriptPath = base_path('scripts/axiosCrawler.js');
 
-        $command = "/home/andrija/node/bin/node '$scriptPath' '$url' $proxyIp $proxyPort $username $password";
-     
+        // $command = "/home/andrija/node/bin/node '$scriptPath' '$url' $proxyIp $proxyPort $username $password";
+
+        $scriptPath = base_path('scripts\axiosCrawler.js');
+
+        $command = "node $scriptPath '$url' $proxyIp $proxyPort $username $password";
+
         $process = Process::fromShellCommandline($command)->setTimeout(400);
 
+        dump($process);
         $process->run();
-        // dump($process);
-        dump("////////////////////////////");
+
+        $path1 = storage_path();
         if ($process->isSuccessful()) {
             return rtrim($process->getOutput());
         }
@@ -47,6 +52,7 @@ class AxiosCrawler
         }
 
         $errorOutput = $process->getErrorOutput();
+        dump($errorOutput);
 
         if (str_contains($errorOutput, 'Your client does not have permission to get URL') || str_contains($errorOutput, 'Sometimes you may be asked to solve the CAPTCHA')) {
             throw new ProxyFailedException($errorOutput);
@@ -56,8 +62,6 @@ class AxiosCrawler
             activity()->event('PROXY')->log("$proxyIp:$proxyPort");
             throw new ProcessFailedConnectionException($errorOutput);
         }
-        dump($errorOutput);
-        return;
-        // throw new ProcessFailedException($process);
+        throw new ProcessFailedException($process);
     }
 }

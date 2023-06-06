@@ -15,7 +15,7 @@ trait ProxyRotation {
     private function getRandomProxy()
     {
         $lastProxy = ProxyLastUsed::latest()->first();
-
+    
         $failedProxyCollection = ProxyFailed::get();
 
         $skipProxyArray = [];
@@ -38,15 +38,15 @@ trait ProxyRotation {
             $subnet = $proxyData->subnet;
         }
 
-            $skipProxyArray = array_unique($skipProxyArray);
+        $skipProxyArray = array_unique($skipProxyArray);
 
-            if (!count($skipProxyArray)) {
-                $proxyCollection = ProxyData::get();
-                // dump($proxyCollection);
-                $proxyData = $proxyCollection->random();
-                // dump($proxyData);
-                return $proxyData;
-            }
+        if (!count($skipProxyArray)) {
+            $proxyCollection = ProxyData::get();
+            // dump($proxyCollection);
+            $proxyData = $proxyCollection->random();
+            // dump($proxyData);
+            return $proxyData;
+        }
 
         $proxyDataQuery = ProxyData::query();
 
@@ -61,13 +61,14 @@ trait ProxyRotation {
         }
 
         if ($subnet) {
-            $proxyDataQuery->where('as', '!=', $subnet);
+            $proxyDataQuery->where('subnet', '!=', $subnet);
         }
 
         $proxyDataCollection = $proxyDataQuery->orderBy('weight', 'ASC')->get();
 
         $proxyData = $proxyDataCollection->first();
-
+        dump("sssssssssssss");
+        dump($lastProxy);
         $weight = $proxyData->weight;
 
         $weight++;
