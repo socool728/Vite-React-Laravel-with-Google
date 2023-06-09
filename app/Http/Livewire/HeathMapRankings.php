@@ -210,6 +210,9 @@ class HeathMapRankings extends Component
         if (count($resultArray)) {
             $this->zipCodeRankings = $resultArray;
         }
+
+        // dump($this->show);
+        // dump($this->enabled);
     }
 
     /**

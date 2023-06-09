@@ -67,8 +67,6 @@ trait ProxyRotation {
         $proxyDataCollection = $proxyDataQuery->orderBy('weight', 'ASC')->get();
 
         $proxyData = $proxyDataCollection->first();
-        dump("sssssssssssss");
-        dump($lastProxy);
         $weight = $proxyData->weight;
 
         $weight++;

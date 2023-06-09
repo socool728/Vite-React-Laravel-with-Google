@@ -1,4 +1,8 @@
 <div>
+    @php
+    use Illuminate\Support\Facades\Log;
+    Log::info("asdfasdfa"); 
+    @endphp
     @if(!$show && $enabled)
         <div wire:poll.10000ms="$refresh" class="map">
             <div class="w-full mapSpinnerHeight z-50 overflow-hidden bg-gray-500 opacity-75 flex flex-col items-center justify-center spinner-relative">
@@ -11,7 +15,7 @@
         </div>
     @endif
     @if($show)
-        <div wire:ignore:self id="map" class="map"/>
+        <div wire:ignore:self id="map" class="map">
         <script>
             var map;
             var markers = [];

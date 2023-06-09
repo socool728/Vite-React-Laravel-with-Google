@@ -201,14 +201,11 @@ class LsaCrawler
         for ($crashes = 0; $crashes < 3; $crashes++) {
             try {
                 $proxyData = $this->getRandomProxy();
-                // printf($crashes);
-                // asdfsdf;
                 $html = $this->scrapeUrl($lsaListUrl, $proxyData);
-                dd($lsaListUrl);
+                // dd($lsaListUrl);
                 
                 break;
             } catch (\Exception $exception) {
-                dump("asdfasdf");
                 if ($crashes < 2) {
                     sleep(2);
                 } else {

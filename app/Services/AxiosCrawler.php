@@ -34,15 +34,19 @@ class AxiosCrawler
 
         $scriptPath = base_path('scripts\axiosCrawler.js');
 
-        $command = "node $scriptPath '$url' $proxyIp $proxyPort $username $password";
+        $command = '"C:\Program Files\nodejs\node.exe" '.$scriptPath.' "'.$url.'" '.$proxyIp.' '.$proxyPort.' '.$username.' '.$password.'';
 
         $process = Process::fromShellCommandline($command)->setTimeout(400);
 
-        dump($process);
         $process->run();
+        $error = $process->getCommandLine();     
+        dump($error);
+        $errorOutput = $process->getOutput();
+        dump($errorOutput);
 
-        $path1 = storage_path();
-        if ($process->isSuccessful()) {
+        // $path1 = storage_path();
+        if ($process->isSuccessful()) { 
+            dump("success");
             return rtrim($process->getOutput());
         }
 

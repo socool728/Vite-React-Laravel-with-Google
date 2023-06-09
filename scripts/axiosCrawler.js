@@ -1,7 +1,6 @@
 const axios = require("axios");
 const { HttpProxyAgent, HttpsProxyAgent } = require('hpagent');
 const { HeaderGenerator } = require('header-generator');
-
 let args = process.argv;
 let url = args[2];
 let ip = args[3];
@@ -19,7 +18,7 @@ let headerGenerator = new HeaderGenerator({
         "desktop"
     ],
     operatingSystems: [
-        "linux", "windows"
+        "windows", "linux"
     ],
     locales: ["en-US", "en"]
 });
@@ -89,5 +88,8 @@ const config = {
     // }
 };
 
+console.log(url);
+console.log(config);
+
 axios.get(url, config)
-    .then(({ data }) => console.log(data));
+    .then(({ data }) => console.log(data)).catch(error=>(console.log(error)));

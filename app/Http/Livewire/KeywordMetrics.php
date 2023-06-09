@@ -72,6 +72,6 @@ class KeywordMetrics extends Component
     {
         $this->authorize('show', $this->keyword);
 
-        return view('livewire.keyword-metrics')->layout('layouts.app');;
+        return view('livewire.keyword-metrics')->layout('layouts.app');
     }
 }

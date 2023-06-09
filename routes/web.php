@@ -39,7 +39,7 @@ Route::middleware([
     Route::get('reports', [ReportController::class, 'list'])->name('reports');
     Route::get('reports/{hash}/download', [ReportController::class, 'download'])->name('download');
     Route::get('auth/logout', [AuthController::class, 'destroy'])->name('auth.logout');
-    Route::get('admin', UserManagement::class)->name('admin')->middleware('role:Admin');;
+    Route::get('admin', UserManagement::class)->name('admin')->middleware('role:Admin');
     Route::get('keyword/{keyword}', KeywordMetrics::class)->name('keyword.metrics');
 });
 
