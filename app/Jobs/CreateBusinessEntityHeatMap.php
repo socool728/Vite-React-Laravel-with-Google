@@ -89,10 +89,10 @@ class CreateBusinessEntityHeatMap implements ShouldQueue
      */
     public function handle()
     {
+
         $location = $this->keyword->location;
 
         $this->location = str_replace('+', ' ', $location);
-
         $geocoding = new Geocoding([
             GoogleMapsApiConfigFields::KEY => env('GOOGLE_MAPS_API_KEY', null)
         ]);

@@ -137,7 +137,7 @@ class RankLSABusinessEntitiesByKeywordJob implements ShouldQueue
         DB::beginTransaction();
 
         try {
-            $result = $this->saveRankingInfo($businessEntitiesCollection, $userId, $keywordId, $keyword);
+            $this->saveRankingInfo($businessEntitiesCollection, $userId, $keywordId, $keyword);
         } catch (\Exception $exception) {
             DB::rollBack();
             activity()->event('SAVING_RANKING_DATA_ERROR_QUEUE')->log($exception->getMessage() . "Keyword Id " . $this->keyword->id);
