@@ -128,7 +128,6 @@ class KeywordSearch extends Component
 
         try {           
             $keywordModel = $crawler->crawlLsaAds($this->keyword, $this->location);
-            // dump($this->keyword);
         } catch (InactiveUserException $exception) {
             return redirect()->back()->with('error', 'Keyword tracking disabled. Contact administrator.');
         } catch (KeywordAlreadyTrackedException $exception) {

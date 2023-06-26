@@ -113,9 +113,7 @@ class LsaCrawler
         $keyword = $this->checkKeyword($originalKeyword, $location);
         
         $lsaListUrl = $this->lsaBaseUrl.$keyword;
-        // dump($lsaListUrl);
         $result = $this->startInitialScraping($lsaListUrl);
-            print("hello");
 
         if (!$result) {
             Log::channel('not_lsa')->info($this->failedContentLogging);
@@ -131,7 +129,6 @@ class LsaCrawler
             $businessEntitiesCollection = $this->getBusinessEntities($this->content);
 
             $this->storeBusinessEntitiesCollection($keywordModel, $businessEntitiesCollection);
-            print("hello");
         } catch (\Exception $exception) {
             DB::rollBack();
             activity()->event('STORING_DATA_ERROR_INITIAL')->log($exception->getMessage());
@@ -201,9 +198,7 @@ class LsaCrawler
         for ($crashes = 0; $crashes < 3; $crashes++) {
             try {
                 $proxyData = $this->getRandomProxy();
-                $html = $this->scrapeUrl($lsaListUrl, $proxyData);
-                // dd($lsaListUrl);
-                
+                $html = $this->scrapeUrl($lsaListUrl, $proxyData);                
                 break;
             } catch (\Exception $exception) {
                 if ($crashes < 2) {
@@ -233,7 +228,6 @@ class LsaCrawler
         activity()->event('MANUAL_INITIAL_SCRAPE_UNKNOWN')->log("$criteria1 + $criteria2 + $criteriaNotLsa1 + $criteriaNotLsa2");
 
         $this->invalidateProxyOnFailure($proxyData);
-        // return;
 
         throw new ProxyFailedException();
     }
