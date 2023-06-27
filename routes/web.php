@@ -41,6 +41,7 @@ Route::middleware([
     Route::get('auth/logout', [AuthController::class, 'destroy'])->name('auth.logout');
     Route::get('admin', UserManagement::class)->name('admin')->middleware('role:Admin');
     Route::get('keyword/{keyword}', KeywordMetrics::class)->name('keyword.metrics');
+    Route::get('test/mail', [ReportController::class, 'sendPDFoverEmail']);
 });
 
 //Route::get('map/{heatMap}', [ReportController::class, 'renderMap'])->name('map-report');
