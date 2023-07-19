@@ -57,6 +57,10 @@ This project use Google auth.
 Users receive the email notification when the new competitors appear.
 And weekly reports are emailed to you with details.
 
+# Deployment:
+<a href="https://app.lsaranktracker.com">Demo</a>
+The project is deployed in cPanel server. 
+
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
