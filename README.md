@@ -59,6 +59,8 @@ And weekly reports are emailed to you with details.
 
 # Deployment:
 <a href="https://app.lsaranktracker.com">Demo</a>
+[![Deploy with Vercel](https://vercel.com/button)](https://app.lsaranktracker.com)
+<br>
 The project is deployed in cPanel server. 
 
 
