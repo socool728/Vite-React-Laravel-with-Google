@@ -22,7 +22,9 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
+        // Updating ranking data for premium account
         $schedule->command(RegisterPaidKeywordRankingJobsCommand::class)->everyFiveMinutes();
+        // Updating ranking data for free account
         $schedule->command(RegisterFreeKeywordRankingJobsCommand::class)->hourly();
         $schedule->command(UpdateWeeklyAverageRanking::class)->timezone('UTC')->at('2:00');
         $schedule->command(UpdateWeeklyAverageRanking::class)->timezone('UTC')->at('14:00');
